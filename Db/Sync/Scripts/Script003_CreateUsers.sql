@@ -1,0 +1,16 @@
+CREATE TABLE [Users] (
+     [Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+     [FirstName] NVARCHAR(50) NULL,
+     [LastName] NVARCHAR(50) NULL,
+     [Email] NVARCHAR(50) NOT NULL,
+     [Password] NVARCHAR(500) NOT NULL,
+     [Phone] NVARCHAR(50) NOT NULL,
+     [IsVerified] BIT NOT NULL DEFAULT (0),
+     [IsActive] BIT NOT NULL DEFAULT (0),
+     [RoleID] INT FOREIGN KEY REFERENCES Role(Id),
+     [DeletedOn] DATETIME NULL,
+     [CreatedBy] NVARCHAR(50) NOT NULL DEFAULT('N/A'),
+     [CreatedOn] DATETIME NULL DEFAULT(GETUTCDATE()),
+     [ModifiedBy] NVARCHAR(50) NOT NULL DEFAULT('N/A'),
+     [ModifiedOn] DATETIME NULL DEFAULT(GETUTCDATE())
+);

@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="dbup" Version="5.0.40" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\Src\Web\appsettings.Development.json">
+        <Link>appsettings.Development.json</Link>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="..\..\Src\Web\appsettings.json">
+        <Link>appsettings.json</Link>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Scripts\Script004_CreateTeam.sql" />
+      <EmbeddedResource Include="Scripts\Script005_CreateCountry.sql" />
+      <EmbeddedResource Include="Scripts\Script006_CreateCity.sql" />
+      <EmbeddedResource Include="Scripts\Script007_CreateStadium.sql" />
+      <EmbeddedResource Include="Scripts\Script008_CreateCompetition.sql" />
+      <EmbeddedResource Include="Scripts\Script009_CreateMatch.sql" />
+      <EmbeddedResource Include="Scripts\Script010_CreateLeague.sql" />
+      <EmbeddedResource Include="Scripts\Script011_CreateCategory.sql" />
+      <EmbeddedResource Include="Scripts\Script011_CreateCategoryPrice.sql" />
+      <EmbeddedResource Include="Scripts\Script012_AddHomeStadiumToTeam.sql" />
+      <EmbeddedResource Include="Scripts\Script014_SeedCategory.sql" />
+      <None Remove="Scripts\Script001_CreateAndSeedRole.sql" />
+      <EmbeddedResource Include="Scripts\Script001_CreateAndSeedRole.sql" />
+      <None Remove="Scripts\Script002_CreateAndSeedGender.sql" />
+      <EmbeddedResource Include="Scripts\Script002_CreateAndSeedGender.sql" />
+      <None Remove="Scripts\Script003_CreateUsers.sql" />
+      <EmbeddedResource Include="Scripts\Script003_CreateUsers.sql" />
+      <None Remove="Scripts\Script013_UpdateTeamLeagueRelation.sql" />
+      <EmbeddedResource Include="Scripts\Script013_UpdateTeamLeagueRelation.sql" />
+    </ItemGroup>
+
+</Project>
